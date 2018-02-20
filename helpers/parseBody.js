@@ -55,5 +55,11 @@ function parseBody(req, res, callback){
 }
 
 function parseMultipartBody(buffer, boundary){
-    
+    /* find the first index of the boundary bytes in our buffer */
+    var start = 0;
+    var end = 0;
+
+    start = buffer.indexOf(boundary, start);
+    end = buffer.indexOf(boundary, start);
+
 }
