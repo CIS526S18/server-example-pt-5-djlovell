@@ -62,4 +62,10 @@ function parseMultipartBody(buffer, boundary){
     start = buffer.indexOf(boundary, start);
     end = buffer.indexOf(boundary, start);
 
+    while(end !== -1){
+        sections.push(Buffer.from(start, end));
+        start = end;
+        end = buffer.indexOf(boundary, start);
+    }
+
 }
